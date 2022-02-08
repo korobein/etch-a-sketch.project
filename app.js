@@ -1,5 +1,6 @@
 const container = document.getElementById("container");
 const btn = document.getElementById("clear");
+let mouseisDown = false
 
 // Default grid
 makeGrid(16, 16);
@@ -22,15 +23,20 @@ function makeGrid (rows, cols) {
         container.appendChild(cell);
     }
 }
+// Used this to try to combine events. It tells if mouse button is down, and then uses that info on paintGrid
+document.addEventListener('mousedown', () => mouseisDown = true);
+document.addEventListener('mouseup', () => mouseisDown = false);
 
-// Changes cells color when mouseover. I want to combine mouseover and mousedown, but I'm still not able.
+// Changes cells color when mouse moves over cell.
 function paintGrid (){
-    Array.from(document.querySelectorAll(".grid-item")).forEach((item) => { item.addEventListener('mouseover', () =>{
-        if (document.getElementById("rainbow").checked === true) {
-            item.style.backgroundColor = `rgb(${randomColor()},${randomColor()},${randomColor()})`
-        } else {
-            item.style.backgroundColor = document.getElementById("color").value
-        }
+    Array.from(document.querySelectorAll(".grid-item")).forEach((item) => { item.addEventListener('mousemove', () =>{
+        if (mouseisDown){
+            if (document.getElementById("rainbow").checked === true) {
+                item.style.backgroundColor = `rgb(${randomColor()},${randomColor()},${randomColor()})`
+            } else {
+                item.style.backgroundColor = document.getElementById("color").value
+            }   
+        }  
     })
         
     })
@@ -43,8 +49,9 @@ btn.addEventListener('click', () => {
     let x 
     do {
         x = prompt("Select a size between 1 and 100", 16)
-    } while (x>100)
+    } while (x>100 || isNaN(x))
     document.querySelectorAll('.grid-item').forEach(e => e.remove());
     makeGrid(x,x);
     paintGrid();
 })
+
