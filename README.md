@@ -10,3 +10,12 @@ English:
 
 My goal with this project was to focus on functionality, rather than looks and style. Possibly the functions in JS should be polished, in particular the one that changes the color of the cells, since I would like to create a dynamic similar to Paint: click and drag to paint. Yet, I am not able to combine events, so this functionality will be relegated to future versions.
 
+V1.1
+
+Español:
+
+Logré agregar esa característica estilo Paint, informando a la función de coloreo el estado del botón del mouse.
+
+English:
+
+I achieved that Paint-like feature, by telling the coloring function the state of the mouse button.
