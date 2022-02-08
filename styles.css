@@ -4,10 +4,6 @@ body {
     align-items: center;
 }
 
-.grid-item {
-    box-sizing: border-box;
-}
-
 #container {
     display: flex;
     flex-wrap: wrap;
