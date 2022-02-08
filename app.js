@@ -1,12 +1,16 @@
 const container = document.getElementById("container");
 const btn = document.getElementById("clear");
+
+// Default grid
 makeGrid(16, 16);
 
+// Generates random number for rgb when rainbow is on
 function randomColor (){
     let rngColor = Math.floor(Math.random()*256)
     return rngColor;
 }
 
+// Creates a grid of square divs, calculating their size relative to the container and the number of rows and columns.
 function makeGrid (rows, cols) {
     let cellS = container.clientHeight/rows;
     
@@ -19,9 +23,9 @@ function makeGrid (rows, cols) {
     }
 }
 
-
+// Changes cells color when mouseover. I want to combine mouseover and mousedown, but I'm still not able.
 function paintGrid (){
-    Array.from(document.getElementsByClassName("grid-item")).forEach((item) => { item.addEventListener('mouseover', () =>{
+    Array.from(document.querySelectorAll(".grid-item")).forEach((item) => { item.addEventListener('mouseover', () =>{
         if (document.getElementById("rainbow").checked === true) {
             item.style.backgroundColor = `rgb(${randomColor()},${randomColor()},${randomColor()})`
         } else {
@@ -34,8 +38,8 @@ function paintGrid (){
 
 paintGrid();
 
+// When user presses clear and new button, clears actual canvas and asks for new div size
 btn.addEventListener('click', () => {
-    Array.from(document.getElementsByClassName("grid-item")).forEach(item => item.style.backgroundColor = "white");
     let x 
     do {
         x = prompt("Select a size between 1 and 100", 16)
