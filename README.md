@@ -1,21 +1,11 @@
 # etch-a-sketch.project
 
-Etch-a-Sketch V1.0
+Etch-a-Sketch V2.0
 
 Español:
 
-Mi objetivo con este proyecto fue centrarme en la funcionalidad, antes que en la apariencia y el estilo. Posiblemente habría que pulir las funciones en JS, en particular la que cambia el color de las celdas, ya que me gustaría crear un dinámica similar a Paint: clicar y arrastrar para pintar. Lamentablemente, aún no soy capaz de combinar eventos, por lo que dicha funcionalidad quedará relegada para próximas versiones. 
+Segundo intento de hacer esta pequeña aplicación. Prácticamente igual que la anterior, pero mejorando un poco las funciones y agregando algo de estilo. Por alguna razón, al imortar una fuente de Google Fonts directamente en el archivo. css, la función para pintar no se ejecutaba, a menos que se creara un canvas nuevo. Por eso, tuve que agregarle directamente en el .html
 
 English:
 
-My goal with this project was to focus on functionality, rather than looks and style. Possibly the functions in JS should be polished, in particular the one that changes the color of the cells, since I would like to create a dynamic similar to Paint: click and drag to paint. Yet, I am not able to combine events, so this functionality will be relegated to future versions.
-
-V1.1
-
-Español:
-
-Logré agregar esa característica estilo Paint, informando a la función de coloreo el estado del botón del mouse.
-
-English:
-
-I achieved that Paint-like feature, by telling the coloring function the state of the mouse button.
+Second attempt to make this little app. Much the same as the previous one, but improving the functions a bit and adding some style. For some reason, while importing a font from Google Fonts directly into the . css, the drawing function wasn't being executed, unless a new canvas was created. Therefore, I had to add it directly to the .html

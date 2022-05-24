@@ -2,21 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="./app.js" defer></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch 2.0</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./sketch.js" defer></script>
+    
+    <!-- Have to add font-family this way due to paint() function not being called when done on .css file -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body,button {
+            font-family: 'VT323', monospace;
+            font-size: 100%; 
+        }
+    </style>
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
+    <h1>¡Etch-a-Sketch!</h1>
 
-    <label for="color">Pick a color:</label>
-    <input type="color" name="color" id="color">
-    <br>
-    <label for="rainbow">Make it rain...bow?</label>
-    <input type="checkbox" name="rainbow" id="rainbow">
-    <br>
-    <button id="clear">Clear and New Canvas!</button>
-    <br>
-    <div id="container"></div>
+    <div id="controls">
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+        <label for="checkbox">Rainbow</label>
+        <input type="checkbox" name="checkbox" id="rainbow">
+        <button id="clear">Clear and New</button>
+    </div>
+
+    <div id="container">
+        
+    </div>
 </body>
 </html>

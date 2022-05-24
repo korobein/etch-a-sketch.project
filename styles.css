@@ -1,13 +1,15 @@
-body {
+body{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
+    gap: 2em;
+ }
+ 
 #container {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-    height: 500px;
-    width: 500px;
-    border: 1px solid black;
 }
